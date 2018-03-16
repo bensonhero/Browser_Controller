@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Phaser Workshop - lesson 01: Initialize the framework</title>
+    <style>* { padding: 0; margin: 0; }</style>
+    <script src="/js/phaser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="/js/phasergame.js"></script>
+</head>
+<body>
+
+<script>
+	var socket = io();
+	var myid = 'jack';
+
+	function hello(){
+		myid = document.getElementById('nickname_input').value;
+		if(myid != ''){
+			var but = document.getElementById('join_button');
+			but.value = "Play";
+			but.disabled = true;
+			socket.emit('adduser', {id:myid});
+		}
+		
+	}
+	function sendMovement(hor,ver){
+		socket.emit('movement', {id:myid,horizontal:hor, vertical:ver});
+	}
+	function sendAction(act){
+		socket.emit('command', {id:myid,action:act});
+	}
+
+
+    
+</script>
+<form>
+  Nickname:<br><input type="text" name="playerid" id ="nickname_input"><br>
+</form>
+<button onclick="hello()" id ="join_button" >Join Game</button>
+<div id="phaser-example"></div>
+</body>
+</html>

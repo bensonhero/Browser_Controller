@@ -1,0 +1,29 @@
+{
+  "name": "browser_controller",
+  "version": "1.0.0",
+  "description": "A project allowing players to control their characters in a party game by phone browser",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "phaser": "^3.1.2",
+    "randomstring": "^1.1.5",
+    "socket.io": "^2.0.4",
+    "socketio": "^1.0.0"
+  },
+  "devDependencies": {
+    "phaser-input": "^1.2.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bensonhero/Browser_Controller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bensonhero/Browser_Controller/issues"
+  },
+  "homepage": "https://github.com/bensonhero/Browser_Controller#readme"
+}
